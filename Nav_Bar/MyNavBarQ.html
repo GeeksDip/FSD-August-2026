@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif sans-serif;
+            line-height: 1.0;
+            color: black;
+        }
+
+        .NavBar {
+            position: sticky;
+            /* width: 100%; */
+            top: 0;
+            background-color: rgb(16 31 54 / 96%);
+            display: flex;
+            color: white;
+            padding: 1.5rem 2rem;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 5000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        #menu {
+            display: none;
+        }
+
+        .Hamburgar-icon {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem;
+            transition: color 0.3s ease, border-bottom 0.3s ease;
+
+        }
+
+        .nav-links li a:hover {
+            color: rgb(3, 3, 46);
+            background-color: rgb(250, 250, 250);
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .Hamburgar-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                width: 100%;
+                background-color: #244862;
+                top: 100%;
+                left: 0;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            #menu:checked~.nav-links {
+                display: flex;
+            }
+
+            .nav-links li a:hover {
+                width: 100%;
+                background-color: aliceblue;
+                color: rgb(255, 0, 106);
+
+            }
+        }
+
+        .container {
+            color: black;
+            padding: 4rem 2rem;
+            min-height: 70vh;
+        }
+
+        .container:nth-child(even) {
+            background-color: rgb(228 226 231)
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="NavBar">
+        <div class="logo">My Logo. </div>
+
+        <input type="checkbox" id="menu">
+        <label for="menu" class="Hamburgar-icon">&#9776;</label>
+
+        <ul class="nav-links">
+            <li><a href="#Home">Home</a> </li>
+            <li><a href="#About">About Us</a> </li>
+            <li><a href="#Service">Service</a> </li>
+            <li><a href="#Contact">Contact Us</a> </li>
+        </ul>
+    </nav>
+    <main>
+        <div id="Home" class="container">
+            <h2>Home</h2>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores nisi corrupti ratione illo facere
+            rerum
+            veniam, non ipsa itaque pariatur ipsam quasi nostrum nemo fugiat necessitatibus quae. Cum illum odit tempore
+            ex
+            ullam hic quidem, molestias earum reprehenderit cumque, dicta rem. Nobis impedit consequuntur sit quasi nemo
+            laboriosam numquam assumenda maiores quis deserunt voluptates repellat cupiditate, repellendus ratione
+            voluptatem, placeat iusto quisquam a sint delectus distinctio dolorem et facilis? In iste ut exercitationem,
+            nesciunt aliquam expedita minima, eius illum reprehenderit velit fugit error ea aperiam. Nisi alias iusto,
+            necessitatibus recusandae quod, architecto fuga atque nam quo at provident delectus?
+        </div>
+        <div id="About" class="container">
+            <h2>About Us</h2>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores nisi corrupti ratione illo facere
+            rerum
+            veniam, non ipsa itaque pariatur ipsam quasi nostrum nemo fugiat necessitatibus quae. Cum illum odit tempore
+            ex
+            ullam hic quidem, molestias earum reprehenderit cumque, dicta rem. Nobis impedit consequuntur sit quasi nemo
+            laboriosam numquam assumenda maiores quis deserunt voluptates repellat cupiditate, repellendus ratione
+
+        </div>
+        <div id="Service" class="container">
+            <h2>Services We are Providing.</h2>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores nisi corrupti ratione illo facere
+            rerum
+            veniam, non ipsa itaque pariatur ipsam quasi nostrum nemo fugiat necessitatibus quae. Cum illum odit tempore
+            ex
+            ullam hic quidem, molestias earum reprehenderit cumque, dicta rem. Nobis impedit consequuntur sit quasi nemo
+
+        </div>
+        <div id="Contact" class="container">
+            <h2>Contact Us</h2>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius maiores nisi corrupti ratione illo facere
+            rerum
+            veniam, non ipsa itaque pariatur ipsam quasi nostrum nemo fugiat necessitatibus quae. Cum illum odit tempore
+            ex
+            ullam hic quidem, molestias earum reprehenderit cumque, dicta rem. Nobis impedit consequuntur sit quasi nemo
+            laboriosam numquam assumenda maiores quis deserunt voluptates repellat cupiditate, repellendus ratione
+            voluptatem, placeat iusto quisquam a sint delectus distinctio dolorem et facilis? In iste ut exercitationem,
+            nesciunt aliquam expedita minima, eius illum reprehenderit velit fugit error ea aperiam. Nisi alias iusto,
+            necessitatibus recusandae quod, architecto fuga atque nam quo at provident delectus?
+        </div>
+    </main>
+</body>
+
+</html>

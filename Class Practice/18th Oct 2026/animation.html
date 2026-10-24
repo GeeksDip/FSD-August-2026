@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 2px solid red;
+            margin-top: 200px;
+            margin-left: 200px;
+
+            animation-name: boxAnimtion;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes boxAnimtion {
+            from {
+                box-shadow: 10px 10px orange;
+            }
+
+            to {
+                box-shadow: 10px 10px yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="box"></div>
+</body>
+
+</html>

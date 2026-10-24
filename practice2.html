@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .nav{
+            width: 100%;
+        }
+        .mybutton {
+            width: 100%;
+            display: none;  
+        }
+        #mobile {
+            display: block;  
+        }
+        @media screen and (min-width: 400px) {
+            .mybutton {
+                display: block;
+            }
+            #mobile{
+                display: none;
+            }
+        }
+
+        /* @media screen and (max-width: 1200px) {
+            .mybutton {
+                display: none;
+            }
+            #mobile{
+                display: block;
+            }
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <div class="mybutton">
+            <button>Button1</button>
+            <button>Button1</button>
+            <button>Button1</button>
+            <button>Button1</button>
+        </div>
+        <button id="mobile"  >A</button>
+    </div>
+</body>
+
+</html>

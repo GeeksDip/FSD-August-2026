@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Navbar Assignment</title>
+  <style>
+    /* --- 1. GENERAL PAGE STYLES --- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* --- 2. NAVBAR STYLES (The Core Assignment) --- */
+    .navbar {
+      /* THIS IS THE MAGIC: Makes it stick to the top when scrolling */
+      position: sticky; 
+      top: 0;
+
+      /* position: fixed;
+      top: 0;
+      width: 100%; */
+      
+      /* Visual styling */
+      background-color: #2c3e50;
+      color: white;
+      padding: 1rem 2rem;
+      
+      /* Flexbox for layout (Logo on left, links on right) */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      /* Keeps the navbar above other content when scrolling */
+      z-index: 1000; 
+      
+      /* Subtle shadow to separate it from scrolling content */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Hide the checkbox used for the mobile menu */
+    #menu-toggle {
+      display: none;
+    }
+
+    /* Hamburger menu icon (hidden on desktop) */
+    .hamburger-icon {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    /* Hover and Focus states */
+    .nav-links li a:hover,
+    .nav-links li a:focus {
+      color: #3498db;
+      border-bottom: 2px solid #3498db;
+    }
+
+    /* --- 3. PAGE CONTENT (To demonstrate scrolling) --- */
+    .content-section {
+      padding: 4rem 2rem;
+      min-height: 100vh; /* Makes each section as tall as the screen */
+    }
+
+    .content-section:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    /* --- 4. MOBILE RESPONSIVENESS (Media Query) --- */
+    @media (max-width: 768px) {
+      /* Show the hamburger icon */
+      .hamburger-icon {
+        display: block;
+      }
+
+      /* Hide links by default on mobile, make them a vertical column */
+      .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background-color: #34495e;
+        position: absolute;
+        top: 100%; /* Positions the menu right below the navbar */
+        left: 0;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      /* When the hidden checkbox is checked (hamburger clicked), show the menu */
+      #menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">MyBrand.</div>
+    
+    <!-- CSS-only Hamburger Menu Trick -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger-icon">&#9776;</label>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- PAGE CONTENT TO ENABLE SCROLLING -->
+  <main>
+    <section id="home" class="content-section">
+      <h2>Welcome to the Home Page</h2>
+      <p>Scroll down to see the navbar stick to the top of the screen!</p>
+      <br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque cursus vitae arcu at porta. Nullam ac quam sed erat pellentesque convallis. Nam eget orci sit amet purus vehicula hendrerit.</p>
+    </section>
+
+    <section id="about" class="content-section">
+      <h2>About Us</h2>
+      <p>Notice how the navbar stays right at the top without covering up this title when you first land on the page? That's the power of position: sticky.</p>
+    </section>
+
+    <section id="services" class="content-section">
+      <h2>Our Services</h2>
+      <p>More content to keep scrolling...</p>
+    </section>
+  </main>
+
+</body>
+</html>

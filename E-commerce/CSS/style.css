@@ -1,0 +1,488 @@
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f1f3f6;
+            /* Flipkart light-grey backdrop */
+            color: #212121;
+            padding-bottom: 50px;
+            /* Initialize CSS counter for real-time Cart increment */
+            counter-reset: cart-items 0;
+        }
+
+      
+        .filter-engine-radio,
+        .cart-engine-checkbox {
+            display: none;
+        }
+
+       
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TOP NAVBAR @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+      
+        .navbar {
+            background-color: #2874f0;
+            /* Signature e-commerce blue */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+        }
+
+        .brand-group {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-logo {
+            font-size: 20px;
+            font-weight: 800;
+            font-style: italic;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-logo span {
+            color: #ffe500;
+        }
+
+        .brand-sub {
+            font-size: 11px;
+            color: #f0f0f0;
+            font-style: italic;
+        }
+
+        .search-bar-wrap {
+            flex: 0 1 520px;
+            margin: 0 20px;
+        }
+
+        .search-bar-wrap input {
+            width: 100%;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 2px;
+            outline: none;
+            font-size: 14px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+  /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   CART BADGE & COUNTER @@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+        .cart-indicator {
+            background: #ffffff;
+            color: #2874f0;
+            padding: 8px 18px;
+            font-weight: 600;
+            border-radius: 2px;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            user-select: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+
+        .cart-badge {
+            background: #fb641b;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+       
+        .cart-engine-checkbox:checked {
+            counter-increment: cart-items;
+        }
+
+        /* Display the calculated count in the badge */
+        .cart-badge::before {
+            content: counter(cart-items);
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  SUB-NAV  @@@@@@@@@@@@@@@@@@@@@@@@@@*/
+        .category-ribbon {
+            background: #ffffff;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 11px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 1px solid #e5e5e5;
+            overflow-x: auto;
+        }
+
+        .category-ribbon label {
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .category-ribbon label:hover {
+            color: #2874f0;
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  MAIN CONTAINER  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+        .main-wrapper {
+            max-width: 1360px;
+            margin: 14px auto;
+            padding: 0 12px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 12px;
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  SIDEBAR FILTERS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+        .filter-sidebar {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 2px;
+            height: fit-content;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .filter-sidebar h3 {
+            font-size: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 14px;
+        }
+
+        .filter-group {
+            margin-bottom: 18px;
+        }
+
+        .filter-group h4 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #878787;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            color: #212121;
+        }
+
+        .radio-circle {
+            width: 15px;
+            height: 15px;
+            border: 2px solid #878787;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+
+        
+        #filter-all:checked~.main-wrapper .lbl-all .radio-circle,
+        #filter-laptop:checked~.main-wrapper .lbl-laptop .radio-circle,
+        #filter-audio:checked~.main-wrapper .lbl-audio .radio-circle,
+        #filter-mobile:checked~.main-wrapper .lbl-mobile .radio-circle,
+        #filter-wearable:checked~.main-wrapper .lbl-wearable .radio-circle {
+            border-color: #2874f0;
+        }
+
+        #filter-all:checked~.main-wrapper .lbl-all .radio-circle::after,
+        #filter-laptop:checked~.main-wrapper .lbl-laptop .radio-circle::after,
+        #filter-audio:checked~.main-wrapper .lbl-audio .radio-circle::after,
+        #filter-mobile:checked~.main-wrapper .lbl-mobile .radio-circle::after,
+        #filter-wearable:checked~.main-wrapper .lbl-wearable .radio-circle::after {
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: #2874f0;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ PRODUCTS CONTENT & RESPONSIVE GRID @@@@@@@@@@@@@@@@@@@@ */
+        .products-container {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .results-header {
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .results-count {
+            color: #878787;
+            font-size: 13px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+            gap: 16px;
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  PRODUCT CARD STYLING  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+        .card {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: box-shadow 0.2s, transform 0.2s;
+            background: #ffffff;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .card-thumb {
+            height: 170px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .card-thumb img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.35;
+            margin-bottom: 6px;
+            color: #212121;
+        }
+
+        .specs-list {
+            font-size: 12px;
+            color: #878787;
+            margin-bottom: 8px;
+            list-style-position: inside;
+            line-height: 1.4;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            background-color: #388e3c;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            width: fit-content;
+            margin-bottom: 8px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .current-price {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .old-price {
+            font-size: 13px;
+            text-decoration: line-through;
+            color: #878787;
+        }
+
+        .discount {
+            font-size: 13px;
+            color: #388e3c;
+            font-weight: 600;
+        }
+
+        .action-row {
+            display: flex;
+            gap: 6px;
+        }
+
+      
+        .btn-add-cart {
+            flex: 1;
+            padding: 9px 4px;
+            background: #ff9f00;           
+            color: #ffffff;
+            border: none;
+            font-weight: 600;
+            border-radius: 2px;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .btn-add-cart:hover {
+            background: #f39400;
+        }
+
+        /* Visual change when item is added */
+        #cart-item-1:checked~.main-wrapper .card-1 .btn-add-cart,
+        #cart-item-2:checked~.main-wrapper .card-2 .btn-add-cart,
+        #cart-item-3:checked~.main-wrapper .card-3 .btn-add-cart,
+        #cart-item-4:checked~.main-wrapper .card-4 .btn-add-cart,
+        #cart-item-5:checked~.main-wrapper .card-5 .btn-add-cart,
+        #cart-item-6:checked~.main-wrapper .card-6 .btn-add-cart {
+            background: #388e3c;
+        }
+
+        #cart-item-1:checked~.main-wrapper .card-1 .btn-add-cart::after,
+        #cart-item-2:checked~.main-wrapper .card-2 .btn-add-cart::after,
+        #cart-item-3:checked~.main-wrapper .card-3 .btn-add-cart::after,
+        #cart-item-4:checked~.main-wrapper .card-4 .btn-add-cart::after,
+        #cart-item-5:checked~.main-wrapper .card-5 .btn-add-cart::after,
+        #cart-item-6:checked~.main-wrapper .card-6 .btn-add-cart::after {
+            content: " Added ✓";
+        }
+
+        .btn-quick-view {
+            padding: 9px 10px;
+            background: #ffffff;
+            color: #2874f0;
+            border: 1px solid #2874f0;
+            font-weight: 600;
+            border-radius: 2px;
+            font-size: 12px;
+            text-decoration: none;
+            text-align: center;
+            user-select: none;
+        }
+
+        .btn-quick-view:hover {
+            background: #f4f8ff;
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   FILTERING @@@@@@@@@@@@@@@@@@@@@@@@@@2 */
+
+        #filter-laptop:checked~.main-wrapper .card:not(.cat-laptop) {
+            display: none;
+        }
+
+        #filter-audio:checked~.main-wrapper .card:not(.cat-audio) {
+            display: none;
+        }
+
+        #filter-mobile:checked~.main-wrapper .card:not(.cat-mobile) {
+            display: none;
+        }
+
+        #filter-wearable:checked~.main-wrapper .card:not(.cat-wearable) {
+            display: none;
+        }
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CSS MODAL POPUP  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+        /* .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+      
+        .modal-overlay:target {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            border-radius: 4px;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 20px;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            text-decoration: none;
+            font-size: 24px;
+            color: #878787;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .modal-img-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-img-wrap img {
+            max-width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+        } */
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  RESPONSIVENESS  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+        @media (max-width: 820px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .search-bar-wrap {
+                width: 100%;
+                margin: 0;
+            }
+
+            .modal-box {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+        }

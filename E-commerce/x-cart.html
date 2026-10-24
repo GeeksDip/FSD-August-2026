@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>X-cart | Online Electronics Store</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+    <!-- HIDDEN RADIO INPUTS FOR PURE CSS CATEGORY FILTER -->
+    <input type="radio" name="category-filter" id="filter-all" class="filter-engine-radio" checked />
+    <input type="radio" name="category-filter" id="filter-laptop" class="filter-engine-radio" />
+    <input type="radio" name="category-filter" id="filter-audio" class="filter-engine-radio" />
+    <input type="radio" name="category-filter" id="filter-mobile" class="filter-engine-radio" />
+    <input type="radio" name="category-filter" id="filter-wearable" class="filter-engine-radio" />
+
+    <!-- HIDDEN CHECKBOX INPUTS FOR PURE CSS CART COUNTER -->
+    <input type="checkbox" id="cart-item-1" class="cart-engine-checkbox" />
+    <input type="checkbox" id="cart-item-2" class="cart-engine-checkbox" />
+    <input type="checkbox" id="cart-item-3" class="cart-engine-checkbox" />
+    <input type="checkbox" id="cart-item-4" class="cart-engine-checkbox" />
+    <input type="checkbox" id="cart-item-5" class="cart-engine-checkbox" />
+    <input type="checkbox" id="cart-item-6" class="cart-engine-checkbox" />
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="navbar">
+        <a href="#" class="brand-group">
+            <span class="brand-logo">X-cart <span>Plus</span></span>
+            <span class="brand-sub">Explore Plus Products</span>
+        </a>
+
+        <div class="search-bar-wrap">
+            <input type="text" placeholder="Search for products, brands and more..." />
+        </div>
+
+        <!-- Live Pure CSS Cart Indicator -->
+        <div class="cart-indicator">
+            🛒 Cart <span class="cart-badge"></span>
+        </div>
+    </header>
+
+
+    <nav class="category-ribbon">
+        <label for="filter-all">All</label>
+        <label for="filter-laptop">Laptops</label>
+        <label for="filter-audio">Audio</label>
+        <label for="filter-mobile">Mobiles</label>
+        <label for="filter-wearable">Wearables</label>
+    </nav>
+
+
+    <div class="main-wrapper">
+
+
+        <aside class="filter-sidebar">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label for="filter-all" class="filter-label lbl-all">
+                    <span class="radio-circle"></span> All Categories
+                </label>
+                <label for="filter-laptop" class="filter-label lbl-laptop">
+                    <span class="radio-circle"></span> Laptops
+                </label>
+                <label for="filter-audio" class="filter-label lbl-audio">
+                    <span class="radio-circle"></span> Audio & Headphones
+                </label>
+                <label for="filter-mobile" class="filter-label lbl-mobile">
+                    <span class="radio-circle"></span> Smartphones
+                </label>
+                <label for="filter-wearable" class="filter-label lbl-wearable">
+                    <span class="radio-circle"></span> Wearables
+                </label>
+            </div>
+        </aside>
+
+        <!-- RIGHT PRODUCTS LISTING -->
+        <main class="products-container">
+            <div class="results-header">
+                <strong>Electronics & Gadgets</strong>
+                <span class="results-count">Showing active items</span>
+            </div>
+
+            <div class="product-grid">
+
+                <!-- CARD 1 -->
+                <div class="card card-1 cat-laptop">
+                    <div class="card-thumb">
+                        <img src="\E-commerce\image\apple.JPG" alt="Apple MacBook Air" />
+                    </div>
+                    <h4 class="card-title">Apple MacBook Air M2 - 8GB / 256GB SSD</h4>
+                    <ul class="specs-list">
+                        <li>Apple M2 Chip Processor</li>
+                        <li>13.6 inch Liquid Retina Display</li>
+                    </ul>
+                    <span class="rating-badge">4.8 ★</span>
+                    <div class="price-row">
+                        <span class="current-price">₹89,900</span>
+                        <span class="old-price">₹99,900</span>
+                        <span class="discount">10% off</span>
+                    </div>
+                    <div class="action-row">
+                        <label for="cart-item-1" class="btn-add-cart">Add to Cart</label>
+                        <a href="#" class="btn-quick-view">Details</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="card card-2 cat-audio">
+                    <div class="card-thumb">
+                        <img src="\E-commerce\image\SonyHeadphones.JPG" alt="Sony Headphones" />
+                    </div>
+                    <h4 class="card-title">Sony WH-1000XM5 ANC Wireless Headphones</h4>
+                    <ul class="specs-list">
+                        <li>Industry-Leading Active Noise Cancellation</li>
+                        <li>Up to 30 Hours Playback</li>
+                    </ul>
+                    <span class="rating-badge">4.6 ★</span>
+                    <div class="price-row">
+                        <span class="current-price">₹26,990</span>
+                        <span class="old-price">₹34,990</span>
+                        <span class="discount">22% off</span>
+                    </div>
+                    <div class="action-row">
+                        <label for="cart-item-2" class="btn-add-cart">Add to Cart</label>
+                        <a href="#" class="btn-quick-view">Details</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="card card-3 cat-mobile">
+                    <div class="card-thumb">
+                        <img src="\E-commerce\image\S24.JPG" alt="Samsung Galaxy S24" />
+                    </div>
+                    <h4 class="card-title">Samsung Galaxy S24 Ultra 5G (Titanium)</h4>
+                    <ul class="specs-list">
+                        <li>12GB RAM, 256GB Storage</li>
+                        <li>200MP Quad Camera Setup</li>
+                    </ul>
+                    <span class="rating-badge">4.7 ★</span>
+                    <div class="price-row">
+                        <span class="current-price">₹1,19,999</span>
+                        <span class="old-price">₹1,34,999</span>
+                        <span class="discount">11% off</span>
+                    </div>
+                    <div class="action-row">
+                        <label for="cart-item-3" class="btn-add-cart">Add to Cart</label>
+                        <a href="#" class="btn-quick-view">Details</a>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="card card-4 cat-audio">
+                    <div class="card-thumb">
+                        <img src="\E-commerce\image\boatHeadphone.JPG" alt="boAt Headphones" />
+                    </div>
+                    <h4 class="card-title">boAt Rockerz 450 Bluetooth Headphones</h4>
+                    <ul class="specs-list">
+                        <li>40mm Dynamic Drivers</li>
+                        <li>Up to 15 Hours Playback</li>
+                    </ul>
+                    <span class="rating-badge">3.9 ★</span>
+                    <div class="price-row">
+                        <span class="current-price">₹1,499</span>
+                        <span class="old-price">₹3,990</span>
+                        <span class="discount">62% off</span>
+                    </div>
+                    <div class="action-row">
+                        <label for="cart-item-4" class="btn-add-cart">Add to Cart</label>
+                        <a href="#" class="btn-quick-view">Details</a>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="card card-5 cat-wearable">
+                    <div class="card-thumb">
+                        <img src="\E-commerce\image\Smartwatch.JPG" alt="Smartwatch" />
+                    </div>
+                    <h4 class="card-title">Noise ColorFit Pulse 2 Max 1.85'' Smartwatch</h4>
+                    <ul class="specs-list">
+                        <li>1.85 inch Bright TFT Screen</li>
+                        <li>Bluetooth Calling & Heart Tracker</li>
+                    </ul>
+                    <span class="rating-badge">4.1 ★</span>
+                    <div class="price-row">
+                        <span class="current-price">₹1,299</span>
+                        <span class="old-price">₹5,999</span>
+                        <span class="discount">78% off</span>
+                    </div>
+                    <div class="action-row">
+                        <label for="cart-item-5" class="btn-add-cart">Add to Cart</label>
+                        <a href="#" class="btn-quick-view">Details</a>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="card card-6 cat-laptop">
+                    <div class="card-thumb">
+                        <img src="\E-commerce\image\LenovoLaptop.JPG" alt="Lenovo Laptop" />
+                    </div>
+                    <h4 class="card-title">Lenovo IdeaPad Slim 3 Core i5 12th Gen</h4>
+                    <ul class="specs-list">
+                        <li>16GB RAM / 512GB SSD</li>
+                        <li>Windows 11 Home Pre-loaded</li>
+                    </ul>
+                    <span class="rating-badge">4.3 ★</span>
+                    <div class="price-row">
+                        <span class="current-price">₹49,990</span>
+                        <span class="old-price">₹68,990</span>
+                        <span class="discount">27% off</span>
+                    </div>
+                    <div class="action-row">
+                        <label for="cart-item-6" class="btn-add-cart">Add to Cart</label>
+                        <a href="#" class="btn-quick-view">Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- PURE CSS DETAIL MODALS -->
+    <!-- <div id="modal-laptop" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close-btn">&times;</a>
+            <div class="modal-img-wrap">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=450&auto=format&fit=crop&q=60"
+                    alt="Product details" />
+            </div>
+            <div>
+                <h2>Apple MacBook Air M2</h2>
+                <p style="color: #388e3c; font-weight: bold; margin: 8px 0;">Special Price: ₹89,900</p>
+                <p style="color: #666; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
+                    Supercharged by the next-generation M2 chip, the redesigned MacBook Air combines incredible
+                    performance and up to 18 hours of battery life into its thin aluminum enclosure.
+                </p>
+                <p style="font-size: 12px; color: #878787;">Warranty: 1 Year Manufacturer Warranty</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-audio" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#" class="modal-close-btn">&times;</a>
+            <div class="modal-img-wrap">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=450&auto=format&fit=crop&q=60"
+                    alt="Headphone details" />
+            </div>
+            <div>
+                <h2>Sony WH-1000XM5 ANC Headphones</h2>
+                <p style="color: #388e3c; font-weight: bold; margin: 8px 0;">Special Price: ₹26,990
+
+                </p>
+                <p style="color: #666; font-size: 13px; line-height: 1.6; margin-bottom: 12px;">
+                    With two processors and eight microphones, these headphones rewrite the rules for distraction-free
+                    listening and clear call quality.
+                </p>
+                <p style="font-size: 12px; color: #878787;">Delivery: Free Delivery within 2 days</p>
+            </div>
+        </div>
+    </div> -->
+
+</body>
+
+</html>
